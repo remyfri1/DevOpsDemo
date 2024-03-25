@@ -107,6 +107,14 @@ export class GuiModel {
                             "width": 2,
                             "newRow": true,
                         },
+                        {
+                            "type": "button",
+                            "name": { default: "Zweite kachel" },
+                            "icon": "fa-file-alt",
+                            "color": "pumpkin",
+                            "page": "modulePage",
+                            "width": 2,
+                            },
                     ]
                 },
                 {

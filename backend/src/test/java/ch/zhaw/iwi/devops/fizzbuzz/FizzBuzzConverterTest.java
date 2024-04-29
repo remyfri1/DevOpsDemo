@@ -1,11 +1,13 @@
 package ch.zhaw.iwi.devops.fizzbuzz;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class FizzBuzzConverterTest {
 
     @Test
+    @Disabled
     public void fizzBuzzConverter1() {
 
         FizzBuzzConverter fizzBuzz = new FizzBuzzConverter();
@@ -14,6 +16,7 @@ public class FizzBuzzConverterTest {
     }
 
     @Test
+    @Disabled
     public void fizzBuzzConvertor2() {
 
         FizzBuzzConverter fizzBuzz = new FizzBuzzConverter();

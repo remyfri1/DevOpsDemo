@@ -33,7 +33,7 @@ public class LibraryTest {
     public void testSearchByTitle() {
         List<Book> results = library.searchByTitle("1984");
         assertFalse(results.isEmpty());
-        assertEquals(1, results.size());
+        assertEquals(0, results.size());
         assertEquals(book1, results.get(0));
     }
 

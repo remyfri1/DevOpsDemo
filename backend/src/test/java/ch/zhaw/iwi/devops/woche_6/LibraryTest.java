@@ -97,8 +97,8 @@ public class LibraryTest {
     @Test
     // test 9
     public void testSearchByPartialTitle() {
-        library.addBook(new Book("1984", "George Orwell"));
-        List<Book> results = library.searchByTitle("19");
+        
+        List<Book> results = library.searchByTitle("198");
         assertFalse(results.isEmpty());
         assertEquals(1, results.size());
     }

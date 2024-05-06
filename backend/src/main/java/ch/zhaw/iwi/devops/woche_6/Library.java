@@ -11,10 +11,17 @@ public class Library {
     public void addBook(Book book) {
         books.add(book);
     }
+    //change with test 9
+   // public List<Book> searchByTitle(String title) {
+   //     return books.stream().filter(book -> book.getTitle().equalsIgnoreCase(title)).collect(Collectors.toList());
+   // }
+// new with test 9
+   public List<Book> searchByTitle(String title) {
+    return books.stream()
+                .filter(book -> book.getTitle().toLowerCase().contains(title.toLowerCase()))
+                .collect(Collectors.toList());
+}
 
-    public List<Book> searchByTitle(String title) {
-        return books.stream().filter(book -> book.getTitle().equalsIgnoreCase(title)).collect(Collectors.toList());
-    }
 
     public List<Book> searchByAuthor(String author) {
         return books.stream().filter(book -> book.getAuthor().equalsIgnoreCase(author)).collect(Collectors.toList());

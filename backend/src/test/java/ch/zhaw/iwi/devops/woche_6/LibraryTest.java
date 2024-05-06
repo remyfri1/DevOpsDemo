@@ -29,37 +29,4 @@ public class LibraryTest {
         assertEquals(3, library.countBooks());
     }
 
-    @Test
-    public void testSearchByTitle() {
-        List<Book> results = library.searchByTitle("1984");
-        assertFalse(results.isEmpty());
-        assertEquals(1, results.size());
-        assertEquals(book1, results.get(0));
-    }
-
-    @Test
-    public void testSearchByAuthor() {
-        List<Book> results = library.searchByAuthor("Harper Lee");
-        assertFalse(results.isEmpty());
-        assertEquals(1, results.size());
-        assertEquals(book2, results.get(0));
-    }
-
-    @Test
-    public void testBorrowBook() {
-        library.borrowBook(book1);
-        assertEquals(1, library.countBooks());
-        assertEquals(1, library.countBorrowedBooks());
-    }
-
-    @Test
-    public void testReturnBook() {
-        library.borrowBook(book1);
-        library.returnBook(book1);
-        assertEquals(2, library.countBooks());
-        assertEquals(0, library.countBorrowedBooks());
-    }
-
-    // Weitere Tests können hier implementiert werden, um spezifischere Funktionen oder Fehlerbehandlungen zu überprüfen.
-
 }

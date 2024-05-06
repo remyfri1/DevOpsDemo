@@ -50,4 +50,12 @@ public class LibraryTest {
     }
 
 
+    @Test
+    //test 4
+    public void testBorrowBook() {
+        library.borrowBook(book1);
+        assertEquals(1, library.countBooks());
+        assertEquals(1, library.countBorrowedBooks());
+    }
+
 }

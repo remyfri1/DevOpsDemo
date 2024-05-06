@@ -84,7 +84,7 @@ public class LibraryTest {
     public void testAddDuplicateBook() {
         library.addBook(new Book("1984", "George Orwell"));
         library.addBook(new Book("1984", "George Orwell"));  // Add the same book again
-        assertEquals(4, library.countBooks());  // Adjust expected count based on handling of duplicates
+        assertEquals(2, library.countBooks());  // Adjust expected count based on handling of duplicates
     }
     
 

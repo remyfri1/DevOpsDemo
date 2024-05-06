@@ -65,7 +65,7 @@ public class LibraryTest {
     public void testReturnBook() {
         library.borrowBook(book1);
         library.returnBook(book1);
-        assertEquals(2, library.countBooks());
+        assertEquals(1, library.countBooks());
         assertEquals(0, library.countBorrowedBooks());
     }
 

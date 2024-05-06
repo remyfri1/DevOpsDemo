@@ -45,7 +45,7 @@ public class LibraryTest {
     public void testSearchByAuthor() {
         List<Book> results = library.searchByAuthor("Harper Lee");
         assertFalse(results.isEmpty());
-        assertEquals(1, results.size());
+        assertEquals(0, results.size());
         assertEquals(book2, results.get(0));
     }
 

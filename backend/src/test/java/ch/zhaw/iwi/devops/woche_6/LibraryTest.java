@@ -2,6 +2,7 @@ package ch.zhaw.iwi.devops.woche_6;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
@@ -70,4 +71,13 @@ public class LibraryTest {
     }
 
 
+    @Test
+    //test 6
+    public void testAttemptToBorrowAlreadyBorrowedBook() {
+        library.borrowBook(book1);  // Borrow the book the first time
+        library.borrowBook(book1);  // Attempt to borrow again
+        assertEquals(1, library.countBorrowedBooks());  
+    }
+ 
+  
 }

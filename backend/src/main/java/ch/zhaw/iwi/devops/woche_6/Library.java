@@ -41,4 +41,10 @@ public class Library {
     public int countBorrowedBooks() {
         return borrowedBooks.size();
     }
+
+    public boolean removeBook(Book book) {
+        boolean removedFromAvailable = books.remove(book);
+        boolean removedFromBorrowed = borrowedBooks.remove(book);
+        return removedFromAvailable || removedFromBorrowed; 
+    }
 }

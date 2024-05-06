@@ -87,6 +87,12 @@ public class LibraryTest {
         assertEquals(2, library.countBooks());  // Adjust expected count based on handling of duplicates
     }
     
-
+    @Test
+    //test 8
+    public void testRemoveBook() {
+        library.removeBook(book1);
+        assertEquals(1, library.countBooks());
+    }
+    
   
 }

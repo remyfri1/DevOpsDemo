@@ -79,5 +79,14 @@ public class LibraryTest {
         assertEquals(2, library.countBorrowedBooks());  
     }
  
+    @Test
+    //test 7
+    public void testAddDuplicateBook() {
+        library.addBook(new Book("1984", "George Orwell"));
+        library.addBook(new Book("1984", "George Orwell"));  // Add the same book again
+        assertEquals(4, library.countBooks());  // Adjust expected count based on handling of duplicates
+    }
+    
+
   
 }

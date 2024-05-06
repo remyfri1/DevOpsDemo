@@ -51,11 +51,23 @@ public class LibraryTest {
 
 
     @Test
-    //test
+    //test 4
     public void testBorrowBook() {
         library.borrowBook(book1);
         assertEquals(2, library.countBooks());
         assertEquals(1, library.countBorrowedBooks());
     }
+
+
+
+    @Test
+    //test 5
+    public void testReturnBook() {
+        library.borrowBook(book1);
+        library.returnBook(book1);
+        assertEquals(2, library.countBooks());
+        assertEquals(0, library.countBorrowedBooks());
+    }
+
 
 }

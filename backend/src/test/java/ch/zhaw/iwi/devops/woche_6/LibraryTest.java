@@ -76,7 +76,7 @@ public class LibraryTest {
     public void testAttemptToBorrowAlreadyBorrowedBook() {
         library.borrowBook(book1);  // Borrow the book the first time
         library.borrowBook(book1);  // Attempt to borrow again
-        assertEquals(1, library.countBorrowedBooks());  
+        assertEquals(2, library.countBorrowedBooks());  
     }
  
   

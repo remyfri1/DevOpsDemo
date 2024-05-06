@@ -94,5 +94,13 @@ public class LibraryTest {
         assertEquals(2, library.countBooks());
     }
     
-  
+    @Test
+    // test 9
+    public void testSearchByPartialTitle() {
+        library.addBook(new Book("1984", "George Orwell"));
+        List<Book> results = library.searchByTitle("19");
+        assertFalse(results.isEmpty());
+        assertEquals(1, results.size());
+    }
+    
 }

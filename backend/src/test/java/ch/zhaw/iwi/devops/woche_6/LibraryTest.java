@@ -103,4 +103,11 @@ public class LibraryTest {
         assertEquals(1, results.size());
     }
     
+    @Test
+    //Test 10 final test
+    public void testSearchByNonexistentAuthor() {
+        List<Book> results = library.searchByAuthor("George Orwell");
+        assertTrue(results.isEmpty());
+    }
+    
 }

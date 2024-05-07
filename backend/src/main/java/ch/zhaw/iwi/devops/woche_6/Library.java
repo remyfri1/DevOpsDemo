@@ -1,6 +1,7 @@
 package ch.zhaw.iwi.devops.woche_6;
-//added for sonar qube
+//added for Sonic Qube
 import java.util.Comparator;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,10 +13,7 @@ public class Library {
     public void addBook(Book book) {
         books.add(book);
     }
-    //change with test 9
-   // public List<Book> searchByTitle(String title) {
-   //     return books.stream().filter(book -> book.getTitle().equalsIgnoreCase(title)).collect(Collectors.toList());
-   // }
+
 // new with test 9
    public List<Book> searchByTitle(String title) {
     return books.stream()
@@ -55,20 +53,6 @@ public class Library {
         boolean removedFromBorrowed = borrowedBooks.remove(book);
         return removedFromAvailable || removedFromBorrowed; 
     }
-//added code für Sonartest
-// Method to sort books by either title or author
-public List<Book> getSortedBooks(String sortBy) {
-    if ("title".equalsIgnoreCase(sortBy)) {
-        return books.stream()
-                    .sorted(Comparator.comparing(Book::getTitle))
-                    .collect(Collectors.toList());
-    } else if ("author".equalsIgnoreCase(sortBy)) {
-        return books.stream()
-                    .sorted(Comparator.comparing(Book::getAuthor))
-                    .collect(Collectors.toList());
-    } else {
-        throw new IllegalArgumentException("Sort by must be 'title' or 'author'");
-    }
-}
+
 
 }

@@ -36,7 +36,7 @@ public class LibraryTest {
     public void testSearchByTitle() {
         List<Book> results = library.searchByTitle("1984");
         assertFalse(results.isEmpty());
-        assertEquals(0, results.size());
+        assertEquals(1, results.size());
         assertEquals(book1, results.get(0));
     }
 
@@ -46,7 +46,7 @@ public class LibraryTest {
     public void testSearchByAuthor() {
         List<Book> results = library.searchByAuthor("Harper Lee");
         assertFalse(results.isEmpty());
-        assertEquals(0, results.size());
+        assertEquals(1, results.size());
         assertEquals(book2, results.get(0));
     }
 
@@ -55,7 +55,7 @@ public class LibraryTest {
     //test 4
     public void testBorrowBook() {
         library.borrowBook(book1);
-        assertEquals(2, library.countBooks());
+        assertEquals(1, library.countBooks());
         assertEquals(1, library.countBorrowedBooks());
     }
 
@@ -66,7 +66,7 @@ public class LibraryTest {
     public void testReturnBook() {
         library.borrowBook(book1);
         library.returnBook(book1);
-        assertEquals(1, library.countBooks());
+        assertEquals(2, library.countBooks());
         assertEquals(0, library.countBorrowedBooks());
     }
 
@@ -76,7 +76,7 @@ public class LibraryTest {
     public void testAttemptToBorrowAlreadyBorrowedBook() {
         library.borrowBook(book1);  // Borrow the book the first time
         library.borrowBook(book1);  // Attempt to borrow again
-        assertEquals(2, library.countBorrowedBooks());  
+        assertEquals(1, library.countBorrowedBooks());  
     }
  
     @Test
@@ -84,14 +84,14 @@ public class LibraryTest {
     public void testAddDuplicateBook() {
         library.addBook(new Book("1984", "George Orwell"));
         library.addBook(new Book("1984", "George Orwell"));  // Add the same book again
-        assertEquals(2, library.countBooks());  // Adjust expected count based on handling of duplicates
+        assertEquals(4, library.countBooks());  // Adjust expected count based on handling of duplicates
     }
     
     @Test
     //test 8
     public void testRemoveBook() {
         library.removeBook(book1);
-        assertEquals(2, library.countBooks());
+        assertEquals(1, library.countBooks());
     }
     
     @Test
@@ -107,7 +107,7 @@ public class LibraryTest {
     //Test 10 final test
     public void testSearchByNonexistentAuthor() {
         List<Book> results = library.searchByAuthor("George Orwell");
-        assertTrue(results.isEmpty());
+        assertFalse(results.isEmpty());
     }
     
 }

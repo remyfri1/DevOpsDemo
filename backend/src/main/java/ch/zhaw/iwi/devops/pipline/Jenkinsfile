@@ -7,9 +7,13 @@ sh 'echo checkout'
 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/remyfri1/DevOpsDemo']])
 }
 }
-stage('Test') {
+stage('Check for File') {
 steps {
-sh 'echo test'
+sh 'echo check of the existance of files'
+sh ' echo check if file book.js exists'
+fileExists 'backend/src/main/java/ch/zhaw/iwi/devops/woche_6/Book.java'
+sh 'echo Check if File Library.java exists'
+fileExists 'backend/src/main/java/ch/zhaw/iwi/devops/woche_6/Library.java'
 }
 }
 stage('Deploy') {

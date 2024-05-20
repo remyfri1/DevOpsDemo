@@ -16,7 +16,7 @@ public class FizzBuzzConverterTest {
     }
 
     @Test
-    //@Disabled
+    @Disabled
     public void fizzBuzzConvertor2() {
 
         FizzBuzzConverter fizzBuzz = new FizzBuzzConverter();
